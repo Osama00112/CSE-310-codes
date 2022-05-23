@@ -1,0 +1,3 @@
+D:/vs code workplace/3-1/CSE 310/Assignment 1/cmake-build-debug/CMakeFiles/Assignment_1.dir
+D:/vs code workplace/3-1/CSE 310/Assignment 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/vs code workplace/3-1/CSE 310/Assignment 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
