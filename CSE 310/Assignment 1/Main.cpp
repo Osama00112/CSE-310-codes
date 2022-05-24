@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 #include <string>
-#include <cstdlib>
-#include <ctime>
 #include "random.h"
 #include "hash.h"
 #include "SymbolTable.h"
@@ -10,7 +8,6 @@ using namespace std;
 
 int main(){
 
-    //SymbolTable newTable = SymbolTable();
     ifstream myfile;
     int global = 1;
     myfile.open("input.txt");
@@ -27,10 +24,7 @@ int main(){
         while(!myfile.eof()){
             if(count == 0){
                 myfile >> bucket;
-                //cout << "bucket hoilo " << bucket << endl;
                 newTable = SymbolTable(bucket, global);
-                //newTable.whatisCurrent();
-                //newTable.printCurrent();
             }else{
                 myfile >> s;
 
@@ -39,16 +33,8 @@ int main(){
                     myfile >> s1 >> s2;
                     cout << s << " " << s1 << " " << s2 << "\n" << endl;
 
-
                     newInfo = new SymbolInfo(s1, s2);
-                    if(newTable.insertSymbol(newInfo)){
-
-                    }else{
-                        cout << "could not insert" << endl;
-                    }
-                    //newTable.printCurrent();
-                    //newTable.printAllScopes();
-
+                    newTable.insertSymbol(newInfo);
                 }
                 else if(s == "L"){
                     string s3;
@@ -65,11 +51,7 @@ int main(){
                     string s4;
                     myfile >> s4;
                     cout << s << " " << s4<< "\n"  << endl;
-                    if(newTable.removeSymbol(new SymbolInfo(s4, ""))){
-
-                    }else{
-                        //cout << "Not Found \n"<< endl;
-                    }
+                    newTable.removeSymbol(new SymbolInfo(s4, ""));
                 }
                 else if(s == "P"){
                     string s5;
@@ -93,9 +75,6 @@ int main(){
             }
             count ++;
         }
-//        while(myfile>>s){
-//            cout << s << endl;
-//        }
     }
     
 

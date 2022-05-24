@@ -11,10 +11,6 @@ bits/stdc++.h
 -
 string
 -
-cstdlib
--
-ctime
--
 random.h
 D:/vs code workplace/3-1/CSE 310/Assignment 1/random.h
 hash.h

@@ -33,9 +33,10 @@ public:
     }
     void EnterScope(){
         if(current == nullptr){
-            ScopeTable *newScope = new ScopeTable(total_bucket, global);
-            ScopeList.push(*newScope);
-            current = newScope;
+//            ScopeTable *newScope = new ScopeTable(total_bucket, global);
+//            ScopeList.push(*newScope);
+//            current = newScope;
+            cout << "no current found " << endl;
         }
         else{
             ScopeTable *newScope = new ScopeTable(total_bucket, current);
@@ -45,26 +46,34 @@ public:
     }
 
     void ExitScope(){
-        ScopeList.pop();
-        ScopeTable *parent = current->getParentScopeTable();
-        cout << "ScopeTable with id "<< current->getId() << " removed"<< "\n"  << endl;
-        delete current;
-        current = parent;
-    }
-
-    bool insertSymbol(SymbolInfo* entry){
-        if(current == nullptr)
-            return false;
+        if(current->getId() == "1"){
+            cout << "Main Scope. Terminates program if exits\n";
+        }
         else{
-            return current->insertEntry(entry);
+            ScopeList.pop();
+            ScopeTable *parent = current->getParentScopeTable();
+            cout << "ScopeTable with id "<< current->getId() << " removed"<< "\n"  << endl;
+            if(current->getId() == "1"){
+                cout << "Main Scope. Terminates program if exits\n";
+            }
+            delete current;
+            current = parent;
         }
     }
 
-    bool removeSymbol(SymbolInfo* entry){
+    void insertSymbol(SymbolInfo* entry){
         if(current == nullptr)
-            return false;
+            cout << "No Current scope found\n";
         else{
-            return current->deleteEntry(entry);
+            current->insertEntry(entry);
+        }
+    }
+
+    void removeSymbol(SymbolInfo* entry){
+        if(current == nullptr)
+            cout << "NO current scope found\n";
+        else{
+            current->deleteEntry(entry);
         }
     }
     void whatisCurrent(){
@@ -111,7 +120,6 @@ public:
             temp = temp->getParentScopeTable();
             cout << endl;
         }
-        cout << "\n";
     }
     int getTotalBucket() const {
         return total_bucket;

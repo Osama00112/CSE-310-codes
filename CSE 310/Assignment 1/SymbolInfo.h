@@ -42,6 +42,11 @@ public:
     void setType(string name){
         Type = name;
     }
-
+    SymbolInfo *getNext() const {
+        return next;
+    }
+    void setNext(SymbolInfo *next) {
+        SymbolInfo::next = next;
+    }
 
 };

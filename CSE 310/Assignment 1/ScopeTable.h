@@ -68,7 +68,7 @@ public:
     }
 
 
-    bool insertEntry(SymbolInfo* entry){
+    void insertEntry(SymbolInfo* entry){
         string entry_Name = entry->getName();
         string entry_Type = entry->getType();
 
@@ -79,11 +79,9 @@ public:
         if(existIndex == -1){
             table[hashIndex].push_back(entry);
             cout << "Inserted in ScopeTable# "<< id << " at position " << hashIndex << ", " << table[hashIndex].size() - 1 << "\n" << endl;
-            return true;
         }
         else{
             cout << "<" << entry_Name << "," << entry_Type << ">" << " already exists in current ScopeTable\n" << endl;
-            return false;
         }
 
     }
@@ -130,7 +128,7 @@ public:
         return temp;
     }
 
-    bool deleteEntry(SymbolInfo* entry){
+    void deleteEntry(SymbolInfo* entry){
         string entry_Name = entry->getName();
 
         SymbolInfo *temp;
@@ -141,11 +139,11 @@ public:
 
         if(index != -1){
             table[hashIndex].erase(table[hashIndex].begin() + index);
-            cout << "Deleted Entry "<< temp->getName() << ", " << temp->getType()  <<" from current ScopeTable\n" << endl;
-            return true;
-        } else
-            return false;
-
+            cout << "Deleted Entry "<< hashIndex << ", " << index  <<" from current ScopeTable\n" << endl;
+        }
+        else{
+            cout << entry_Name <<" Not found\n" << endl;
+        }
     }
 
     void printScopeTable(){
@@ -157,6 +155,7 @@ public:
             }
             cout << endl;
         }
+        cout << "\n" ;
     }
 
 
