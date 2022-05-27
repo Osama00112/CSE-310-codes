@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 #include <string>
-#include "random.h"
-#include "hash.h"
 #include "SymbolTable.h"
 
 using namespace std;
@@ -71,6 +69,10 @@ int main(){
                 else if(s == "E"){
                     cout << s<< "\n"  << endl;
                     newTable->ExitScope();
+                }
+                else{
+                    cout << s << "\n" << endl;
+                    cout << "invalid command\n" << endl;
                 }
             }
             count ++;
