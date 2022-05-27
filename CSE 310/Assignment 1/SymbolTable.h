@@ -31,6 +31,13 @@ public:
         ScopeList.push(*current);
         //printCurrent();
     }
+
+    ~SymbolTable(){
+        delete current;
+        //cout << "symbol table destructor called\n" << endl;
+
+    }
+
     void EnterScope(){
         if(current == nullptr){
 //            ScopeTable *newScope = new ScopeTable(total_bucket, global);

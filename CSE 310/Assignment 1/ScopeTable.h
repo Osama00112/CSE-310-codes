@@ -18,7 +18,6 @@ using namespace std;
 
 class ScopeTable{
     int total_buckets;
-
     string id;
     ScopeTable *parentScopeTable;
     int childScopeCount;
@@ -34,15 +33,14 @@ public:
         total_buckets = bucket;
         parentScopeTable = nullptr;
         childScopeCount = 0;
-        //parentScopeTable->setChildScopeCount(parentScopeTable->getChildScopeCount()+1);
         id = to_string(globalScopeCount);
 
         table = new vector<SymbolInfo*>[total_buckets];
 
-        for (int i =0; i< total_buckets ; i++){
-            //vector<SymbolInfo*> v;
-            table[i] = vector<SymbolInfo*>();
-        }
+//        for (int i =0; i< total_buckets ; i++){
+//            //vector<SymbolInfo*> v;
+//            table[i] = vector<SymbolInfo*>();
+//        }
 
         //cout << "New ScopeTable with id " << id << " created" << endl;
     }
@@ -58,7 +56,8 @@ public:
             cout << "error, parent null" << endl;
         }
 
-        table = new vector<SymbolInfo*>[total_buckets];
+        table = new vector<SymbolInfo*>[total_buckets];  //dynamically allocated
+
         for (int i =0; i< total_buckets ; i++){
             //vector<SymbolInfo*> v;
             table[i] = vector<SymbolInfo*>();
@@ -68,7 +67,7 @@ public:
     }
 
 
-    void insertEntry(SymbolInfo* entry){
+    bool insertEntry(SymbolInfo* entry){
         string entry_Name = entry->getName();
         string entry_Type = entry->getType();
 
@@ -79,9 +78,11 @@ public:
         if(existIndex == -1){
             table[hashIndex].push_back(entry);
             cout << "Inserted in ScopeTable# "<< id << " at position " << hashIndex << ", " << table[hashIndex].size() - 1 << "\n" << endl;
+            return true;
         }
         else{
             cout << "<" << entry_Name << "," << entry_Type << ">" << " already exists in current ScopeTable\n" << endl;
+            return false;
         }
 
     }
@@ -144,6 +145,8 @@ public:
         else{
             cout << entry_Name <<" Not found\n" << endl;
         }
+
+        delete temp;
     }
 
     void printScopeTable(){
@@ -161,7 +164,12 @@ public:
 
 
     ~ScopeTable(){
-        table->clear();
+
+        //cout << "scope of id :" << this->getId()  <<" destroyed\n" << endl;
+//        for(int i = 0; i< total_buckets; i++){
+//            table[i].clear();
+//        }
+        delete table;
     }
 
     // hash function

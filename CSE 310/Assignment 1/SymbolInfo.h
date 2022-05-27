@@ -24,6 +24,10 @@ public:
         next = nullptr;
     }
 
+    ~SymbolInfo(){
+        //cout << "symbol destroyed\n";
+    }
+
     void printTable(){
         cout << "< "  << getName() << " : " << getType() << "> " ;
     }
