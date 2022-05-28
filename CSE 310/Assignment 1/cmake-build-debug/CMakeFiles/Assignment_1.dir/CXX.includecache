@@ -11,10 +11,6 @@ bits/stdc++.h
 -
 string
 -
-random.h
-D:/vs code workplace/3-1/CSE 310/Assignment 1/random.h
-hash.h
-D:/vs code workplace/3-1/CSE 310/Assignment 1/hash.h
 SymbolTable.h
 D:/vs code workplace/3-1/CSE 310/Assignment 1/SymbolTable.h
 
@@ -51,24 +47,4 @@ ctime
 -
 ScopeTable.h
 D:/vs code workplace/3-1/CSE 310/Assignment 1/ScopeTable.h
-
-D:/vs code workplace/3-1/CSE 310/Assignment 1/hash.h
-bits/stdc++.h
--
-string
--
-cstdlib
--
-ctime
--
-
-D:/vs code workplace/3-1/CSE 310/Assignment 1/random.h
-iostream
--
-string
--
-cstdlib
--
-ctime
--
 

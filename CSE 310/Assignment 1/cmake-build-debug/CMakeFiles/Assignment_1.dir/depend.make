@@ -5,6 +5,4 @@ CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../Main.cpp
 CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../ScopeTable.h
 CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../SymbolInfo.h
 CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../SymbolTable.h
-CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../hash.h
-CMakeFiles/Assignment_1.dir/Main.cpp.obj: ../random.h
 
