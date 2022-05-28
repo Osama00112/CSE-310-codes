@@ -9,7 +9,6 @@ int main(){
     ifstream myfile;
     int global = 1;
     myfile.open("input.txt");
-
     if(myfile.fail())
         cout << "failed " << endl;
     else{
@@ -76,14 +75,10 @@ int main(){
                     cout << s << "\n" << endl;
                     cout << "invalid command\n" << endl;
                 }
-
-            //free(newInfo);
             }
             count ++;
         }
-
         delete newTable;
-        //delete newInfo;
     }
     
 

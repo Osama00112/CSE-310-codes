@@ -56,29 +56,21 @@ public:
         string entry_Type = entry->getType();
 
         int hashIndex = sdbm(entry_Name) % total_buckets;
-
         int existIndex = ifExists(entry);
         SymbolInfo* temp = table[hashIndex];
 
         int count = 0;
-
         if(temp == nullptr){
             table[hashIndex] = entry;
             cout << "Inserted in ScopeTable# "<< id << " at position " << hashIndex << ", " << count << "\n" << endl;
             return;
         }
-
-        
-
         while(temp->getNext() != nullptr){
-
             temp = temp->getNext();
             count ++;
         }
-
         temp->setNext(entry);
         cout << "Inserted in ScopeTable# "<< id << " at position " << hashIndex << ", " << count+1 << "\n" << endl;
-
     }
 
 
@@ -87,11 +79,9 @@ public:
         string entry_Type = entry->getType();
 
         int hashIndex = sdbm(entry_Name) % total_buckets;
-
         int existIndex = ifExists(entry);
 
         SymbolInfo* temp = table[hashIndex];
-
         if(existIndex == -1){
             insert(entry);
             //cout << "Inserted in ScopeTable# "<< id << " at position " << hashIndex << ", " << existIndex << "\n" << endl;
@@ -218,8 +208,6 @@ public:
         else{
             cout << entry_Name <<" Not found\n" << endl;
         }
-
-        //delete temp;
     }
 
     void printScopeTable(){

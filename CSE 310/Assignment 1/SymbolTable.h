@@ -29,7 +29,6 @@ public:
         ScopeTable *scope = new ScopeTable(total_bucket, global);
         current = scope;
         ScopeList.push(*current);
-        //printCurrent();
     }
 
     ~SymbolTable(){
@@ -40,9 +39,6 @@ public:
             delete temp;
             temp = parent;
         }
-        //delete current;
-        //cout << "symbol table destructor called\n" << endl;
-
     }
 
     void EnterScope(){
@@ -95,7 +91,6 @@ public:
         SymbolInfo *searched = nullptr;
 
         while(temp != nullptr){
-            //cout << "now looking at id " << temp->getId() << endl;
             int found;
             found = temp->ifExists(entry);
             
@@ -116,7 +111,6 @@ public:
             cout << "No Scope found"<< "\n"  << endl;
         }
         else{
-            //cout << "current id is " << current->getId() << endl;
             current -> printScopeTable();
         }
     }
