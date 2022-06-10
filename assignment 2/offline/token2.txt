@@ -1,0 +1,5 @@
+<ID,main> <LPAREN,(> <RPAREN,)> <LCURL,{> <CHAR, char> <ID,ch> <ASSIGNOP,=> <CONST_CHAR,b> <SEMICOLON,;> <CHAR, char> <ID,ch1> <ASSIGNOP,=> <CONST_CHAR,
+> <SEMICOLON,;> <FLOAT, float> <ID,f> <ASSIGNOP,=> <CONST_FLOAT,5E4> <SEMICOLON,;> <INT, int> <ID,_3d> <SEMICOLON,;> <INT, int> <ID,_4> <SEMICOLON,;> <ID,ch> <ASSIGNOP,=> <CONST_CHAR,	> <SEMICOLON,;> <CHAR, char> <ID,c> <LTHIRD,[> <RTHIRD,]> <ASSIGNOP,=> <STRING,"ab\td"> <SEMICOLON,;> <ID,printf> <LPAREN,(> <STRING,"abc\
+def\
+ghi"> <RPAREN,)> <SEMICOLON,;> <MULOP,/> <MULOP,/> <ID,a> <ID,comment> <COMMENT,/** another
+*** comment ***/> <RETURN, return> <CONST_INT,0> <SEMICOLON,;> <RCURL,}> 
