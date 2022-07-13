@@ -1,0 +1,8 @@
+Error at line 9: Return type does not match for the function foo()
+
+Error at line 10: ID is not a variable : x
+
+Error at line 11: ID is not a variable : y
+
+Error at line 11: ID is not a variable : x
+
